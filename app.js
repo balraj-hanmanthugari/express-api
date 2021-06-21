@@ -54,7 +54,7 @@ app.all("*", (req, res, next) => {
 app.use(errorHandler);
 
 //database
-mongoose.connect(process.env.DATABASE_LOCAL, {
+mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false

@@ -1,0 +1,15 @@
+language: node-js
+node_js:
+ - "14"
+env:
+ - NODE_ENV=ci
+dist: trusty
+cache:
+ directories:
+  - node_modules
+  - client/node_modules
+install:
+ - npm ci
+script:
+ - npm run build --prod
+ - npm run test
