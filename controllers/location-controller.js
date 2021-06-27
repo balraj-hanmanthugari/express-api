@@ -1,4 +1,4 @@
-const catchAsync = require('./../util/catch-async');
+const catchAsync = require('./../util/error-service').catchAsync;
 const Location = require('../models/location-model');
 
 exports.getLocations = catchAsync(async function(req, res) {

@@ -1,4 +1,4 @@
-const catchAsync = require('./../util/catch-async');
+const catchAsync = require('./../util/error-service').catchAsync;
 const User = require('../models/user-model');
 const crypto = require('crypto');
 const fs = require('fs');

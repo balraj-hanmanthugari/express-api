@@ -1,6 +1,6 @@
 const User = require("../models/user-model");
 const jwt = require("jsonwebtoken");
-const catchAsync = require("./../util/catch-async");
+const catchAsync = require("./../util/error-service").catchAsync;
 
 exports.checkEmailId = catchAsync(async function(req, res) {
   let isEmailExists = false;

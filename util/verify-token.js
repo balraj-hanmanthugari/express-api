@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const appError = require('./app-error');
+const appError = require('./error-service').appError;
 
 sendUnauthorizedError = () => {
     let appErr = new appError("unauthorized", 401);

@@ -1,6 +1,6 @@
 const Tour = require('./../models/tour-model');
 const Booking = require('./../models/booking-model');
-const catchAsync = require('./../util/catch-async');
+const catchAsync = require('./../util/error-service').catchAsync;
 
 exports.getTours = catchAsync(async function(req, res) {
     let tours = await Tour.find().sort('-createdAt')

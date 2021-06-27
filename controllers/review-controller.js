@@ -1,4 +1,4 @@
-const catchAsync = require('./../util/catch-async');
+const catchAsync = require('./../util/error-service').catchAsync;
 const Review = require('../models/review-model');
 const Tour = require('./../models/tour-model');
 const mongoose = require('mongoose');
