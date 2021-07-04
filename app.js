@@ -24,8 +24,6 @@ if(cluster.isMaster) {
 
     //reading configuration file and the data is stored in process.env
     dotenv.config({path: './config.env'});
-    const host = process.env.HOST;
-    const port = process.env.PORT;
 
     if(process.env.NODE_ENV === 'development') {
         //logging in development mode
@@ -63,7 +61,7 @@ if(cluster.isMaster) {
     .catch(() => console.log("DB connection failed"));
 
     //server 
-    app.listen(port, host, () => {
+    app.listen(process.env.PORT, process.env.HOST, () => {
         console.log("server running");
     });
 }
