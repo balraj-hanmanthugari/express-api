@@ -1,56 +1,65 @@
 const mongoose = require("mongoose");
 
-const tourSchema = new mongoose.Schema({
+const tourSchema = new mongoose.Schema(
+  {
     name: {
-        type: String,
-        required: [true, 'tour must have name']
+      type: String,
+      required: [true, "tour must have name"],
     },
     duration: {
-        type: String,
-        required: [true, 'tour must have duration']
+      type: String,
+      required: [true, "tour must have duration"],
     },
     maxGroupSize: {
-        type: Number,
-        required: [true, 'tour should have max group size']
+      type: Number,
+      required: [true, "tour should have max group size"],
     },
     category: {
-        type: String,
-        required: [true, 'tour should have category'],
-        enum: ['domestic', 'international']
+      type: String,
+      required: [true, "tour should have category"],
+      enum: ["domestic", "international"],
     },
     price: {
-        type: Number,
-        required: [true, 'tour should have price']
+      type: Number,
+      required: [true, "tour should have price"],
     },
-    images: [{
-        type: String
-    }],
+    images: [
+      {
+        type: String,
+      },
+    ],
     reviewQuantity: {
-        type: Number,
-        default: 0
+      type: Number,
+      default: 0,
     },
     ratingAverage: {
-        type: Number,
-        default: 0
+      type: Number,
+      default: 0,
     },
     startDates: [String],
-    locations: [{
+    locations: [
+      {
         type: mongoose.Schema.ObjectId,
-        ref: 'Location'
-    }],
-    guides: [{
+        ref: "Location",
+      },
+    ],
+    guides: [
+      {
         type: mongoose.Schema.ObjectId,
-        ref: 'User'
-    }],
+        ref: "User",
+      },
+    ],
     createdAt: {
-        type: Date,
-        default: Date.now()
-    }
-}, {
-    toJSON: { virtuals: true},
-    toObject: { virtuals: true}
-});
+      type: Date,
+      default: Date.now(),
+    },
+  },
+  {
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
+  }
+);
 
-const TourModel = mongoose.model('Tour', tourSchema);
+const TourModel = mongoose.model("Tour", tourSchema);
 
 module.exports = TourModel;

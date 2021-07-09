@@ -1,21 +1,21 @@
 language: node-js
 node_js:
-- '14'
+  - "14"
 env:
-- NODE_ENV=ci
+  - NODE_ENV=ci
 dist: trusty
 services:
-- docker
+  - docker
 cache:
   directories:
-  - node_modules
-  - client/node_modules
+    - node_modules
+    - client/node_modules
 install:
-- npm ci
+  - npm ci
 script:
-- docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-- docker build -t balrajhanmanthugari/express-api:v1 .
-- docker push balrajhanmanthugari/express-api:v1
+  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+  - docker build -t balrajhanmanthugari/express-api:v1 .
+  - docker push balrajhanmanthugari/express-api:v1
 deploy:
   skip_cleanup: true
   provider: heroku
