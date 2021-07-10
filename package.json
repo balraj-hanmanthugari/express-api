@@ -5,16 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
-    "pre-commit": "lint-staged"
-  },
-  "pre-commit": [
-    "pre-commit"
-  ],
-  "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "git add"
-    ]
+    "prettier --write .",
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -27,9 +18,7 @@
     "morgan": "~1.9.1"
   },
   "devDependencies": {
-    "lint-staged": "^11.0.0",
     "nodemon": "^2.0.2",
-    "pre-commit": "^1.2.2",
     "prettier": "^2.3.2"
   }
 }
