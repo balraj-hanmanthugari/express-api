@@ -9,16 +9,9 @@ services:
 cache:
   directories:
     - node_modules
-    - client/node_modules
 install:
   - npm ci
 script:
   - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-  - docker build -t balrajhanmanthugari/express-api:v1 .
-  - docker push balrajhanmanthugari/express-api:v1
-deploy:
-  skip_cleanup: true
-  provider: heroku
-  api_key:
-    secure: Fr5p1CWwVKOexifl7gMaeEpv6A2oEufMiY6aGxW8d6WqO8Z90OPHGmdQc6st2y+moX2tfzqAjoEdnI/H8IKBIori1J6V8jV0wqE6opVH7Q0pkX7p64067Qk8Qc+eT0c4r6dg6d8/x81ZiiJxZNetmilqX6sgbSQXyF0Goxua1Pj2oPVQwpN4i90GwU3MYz+yeYLaI9kYidxztD/Y/HbL1ydyObNxFzjqE7hz5qtOD1vGbHFSxkcIE0CNoSydQQ+3gbC4Ho46WUo3oHbXhoSJ3HmWf1lHwHAG7PsAT897a0dGiZaDJWBcjM9An7Wg9TexxQcYi/hjVZStZRJ+uV7aiamiz844lpdYQegNZW4RKgdRRBPYwQxMrU4D1Ymx0wOlYVFDxssgfB0rdySJmtRyf51VPSVB36dfuu/isI2Ulg8f0wcQ+kJCq6Lb1jyLba79+WMNSsmfnd9Sis0Pp4QLnDkDjLUfQUIBR4x5jNJueitOJ21lQ/n+z4xhAQ1rT36WeUQkvXKUpeF12wUMqI6vuoSArUN/owjg4W37GTvRFRRJnmUKpINfyRepRvUXGHXzrN4Mk02wLWKxDOFap5vpqC71hjQuyt5iKg0vHqrxk1SYxK2GtwIOv4lLVzCkopsxrqLUrNn0I5cTXYkgHCRSISUVEVHrEGEuUbvDFWwJvAE=
-  app: express-web-app
+  - docker build -t balrajhanmanthugari/express-api:v2 .
+  - docker push balrajhanmanthugari/express-api:v2
